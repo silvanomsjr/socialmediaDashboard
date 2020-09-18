@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+:root{
+    --limeGreen: hsl(163, 72%, 41%);
+    --brightRed: hsl(356, 69%, 56%);
+    --bodyColor:  hsl(230, 17%, 14%);
+    --bodyColorW: hsl(0, 0%, 100%);
+    --headerColor:  hsl(232, 19%, 15%);
+    --headerWhite: hsl(225, 100%, 98%);
+    --cardBackground:  hsl(228, 28%, 20%);
+    --cardBgHover:  hsl(228, 26%, 27%);
+    --cardBgWhite: hsl(227, 47%, 96%);
+    --cardBgHoverW: hsl(232, 33%, 91%);
+    --textBlue: hsl(228, 34%, 66%);
+    --textBlueW: hsl(228, 12%, 44%);
+    --textWhite: hsl(0, 0%, 100%);
+    --textDarkBlueW: hsl(230, 17%, 14%);
+    --facebookColor: hsl(208, 92%, 53%);
+    --twitterColor: hsl(203, 89%, 53%);
+    --instaColor: linear-gradient(90deg, hsl(37, 97%, 70%) 0%, hsl(329, 70%, 58%) 100%);
+    --youtubeColor: hsl(348, 97%, 39%);
+    --toggleDark: linear-gradient(90deg, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+    --toggleWhite: hsl(230, 22%, 74%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bodyColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body.active{
+    background-color: var(--bodyColorW);
+}
+
+.header{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    top: 0;
+    padding: 50px 105px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--headerColor);
+    color: var(--textWhite);
+}
+
+.header.active{
+    background-color: var(--headerWhite);
+    color: var(--textDarkBlueW);
+
+}
+
+.header.active h3{
+    color: var(--textBlueW);
+}
+
+.text-header h3,
+.header p{
+    font-weight: bold;
+    color: var(--textBlue);
+}
+
+.btncheck-div{
+    position: relative;
+    margin-top: 5px;
+    width: 45px;
+    height: 20px;
+    background-image: var(--toggleDark);
+    border-radius: 20px;
+}
+
+.ball{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-120%, -50%);
+    width: 15px;
+    height: 15px;
+    background: var(--cardBackground);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.ball.checked{
+    transform: translate(10%, -50%);
+}
+
+.ball.checked .btncheck-div{
+    background: var(--toggleWhite);
+}
+
+.btn-dark{
+    display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hot{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    padding-top: 100px;
+    flex-wrap: wrap;
+}
+
+.hot-post{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1 1 20%;
+    padding: 20px 0;
+    height: 240px;
+    background: var(--cardBackground);
+    border-radius: 5px 5px 10px 10px;
+    margin: 10px 15px 10px 0;
+    min-width: 165px;
+}
+
+.hot-post.active{
+    background-color: hsl(227, 47%, 96%);
+}
+
+.hot-post.active .followers{
+    color: var(--textDarkBlueW);
+}
+
+.hot-post.active .follower-p{
+    color: var(--textBlueW);
+}
+
+.facebook{
+    border-top: 4px solid var(--facebookColor);
+}
+
+.twitter{
+    border-top: 4px solid var(--twitterColor);
+}
+
+.insta::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    border: none;
+    background-image: var(--instaColor);
+    border-radius: 5px 5px 0 0;
+}
+
+.youtube{
+    border-top: 4px solid var(--youtubeColor);
+}
+
+.icons-social-hot{
+    margin-right: 10px;
+}
+
+.username{
+    color: var(--textBlue);
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers-p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.followers{
+    color: var(--textWhite);
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.follower-p{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: var(--textBlue);
+}
+
+.new-follows{
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.up{
+    color: var(--limeGreen);
+}
+
+.down{
+    color: var(--brightRed);
+}
+
+.new-follows img{
+    margin-right: 5px;
+}
+
+.today-title{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-left: 80px;
+    color: var(--textWhite);
+}
+
+body.active .today-title{
+    color: var(--textBlueW);
+}
+
+.today{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.today-posts{
+    background-color: var(--cardBackground);
+    flex:1 1 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+
+.today-posts.active{
+    background-color: hsl(227, 47%, 96%);
+}
+
+.today-posts.active .number-hot{
+    color: var(--textDarkBlueW);
+}
+
+.titleandNumber p{
+    color: var(--textBlue);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.number-hot{
+    color: var(--textWhite);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.titleandNumber{
+    height: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.socialandNumber{
+    height: 100%;
+    padding: 20px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.socialandNumber .percent{
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percent img{
+    margin-right: 5px;
+}
+
+.posts:hover{
+    background-color: var(--cardBgHover);
+}
+
+.post-divs{
+    margin: 10 auto;
+}
+
+body.active .posts:hover{
+    background-color: var(--cardBgHoverW);
+}
+
+.active{
+    transition: 0.5s ease-out;
+
+}
+
+/*==============HEIGHT STUFFS==========================*/
+
+@media(max-height: 825px){
+    .hot{
+        padding-top: 200px;
+    }
+}
+
+@media(max-height: 730px){
+    .hot{
+        padding-top: 400px;
+    }
+}
+
+@media(max-height: 530px){
+    .hot{
+        padding-top: 600px;
+    }
+}
+
